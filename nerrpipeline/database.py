@@ -2,7 +2,7 @@ from typing import Optional
 import psycopg2
 
 from logger import AppLogger
-from credentials import CREDENTIALS, EVCREDENTIALS
+from credentials import CREDENTIALS
 
 
 applogger = AppLogger.default_logger(__name__)
@@ -23,7 +23,7 @@ class DatabaseConnection:
     def create_connection(self):
         applogger.info("Creating DB connection...")
 
-        creds = self.credentials()
+        creds = self.credentials.get_credentials_from_json()
         host = creds.DB_HOST
         database = creds.DB_NAME
         user = creds.DB_USER
@@ -74,5 +74,5 @@ class EnvironmentalDataConnection(DatabaseConnection):
     """
         Class with default credentials object to connect to the EV DB.
     """
-    def __init__(self, credentials: CREDENTIALS = EVCREDENTIALS) -> None:
+    def __init__(self, credentials: CREDENTIALS = CREDENTIALS) -> None:
         super().__init__(credentials)

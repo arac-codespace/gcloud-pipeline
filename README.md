@@ -2,6 +2,13 @@
 
 Using Apache Beam's SDK to load, clean and upload data into a Cloud SQL (PostgreSQL) server.
 
+
+Changelog:
+(2022-12-20) - Changed code to handle credentials better.  
+
+To future Alex:
+The pipeline's insert only and doesn't move files from bucket to bucket.  May want to do that if you ever feel like over-engineering the heck out of this...
+
 Resources:
 - Loading data into bigquery by SadeeqAkintola
 -- https://medium.com/@SadeeqAkintola/loading-data-from-multiple-csv-files-in-gcs-into-bigquery-using-cloud-dataflow-python-a695648e9c63

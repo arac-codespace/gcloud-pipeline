@@ -4,7 +4,7 @@ data/
 __pycache__
 .ipynb_checkpoints/
 
-credentials.py
+credentials.json
 data_profile
 documents
 .ipynb_checkpoints
